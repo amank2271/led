@@ -1,0 +1,12 @@
+#if !defined(__TEST_H)
+#define __TEST_H
+#include "stdlib.h"
+#include "stdint.h"
+
+typedef struct i2c_tag i2c_t;
+i2c_t *i2cinit(uint16_t addr);
+void update(i2c_t *pConfig);
+uint16_t getdata(i2c_t *pConfig);
+void deinit(i2c_t *pConfig);
+
+#endif // __TEST_H

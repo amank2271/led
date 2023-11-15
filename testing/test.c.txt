@@ -1,0 +1,28 @@
+#include "test.h"
+struct i2c_tag
+{
+  uint16_t address;
+  uint8_t data;
+};
+
+i2c_t *i2cinit(uint16_t addr)
+{
+  i2c_t *pConfig = malloc(sizeof(i2c_t));
+  pConfig->address = addr;
+  return (pConfig);
+}
+
+void update(i2c_t *pConfig)
+{
+  pConfig->data = 20;
+}
+
+uint16_t getdata(i2c_t *pConfig)
+{
+  return pConfig->data;
+}
+
+void deinit(i2c_t *pConfig)
+{
+  free(pConfig);
+}

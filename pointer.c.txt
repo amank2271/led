@@ -1,0 +1,10 @@
+#include "stdio.h"
+#include "test.h"
+int main()
+{
+  i2c_t *pI2c = i2cinit(0x22);
+  update(pI2c);
+  uint16_t data = getdata(pI2c);
+  printf("%d\n", data);
+  return 0;
+}
