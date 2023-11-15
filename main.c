@@ -9,7 +9,8 @@ int main(void)
   for (int i = 0; i < MAXPIN; i++)
   {
     isButtonPressed(data, i);
-  }
+    printf("%d", i);
+    }
 
   int recvData = getValue(data);
   double temp = readFloat(data);
